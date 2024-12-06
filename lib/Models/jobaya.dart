@@ -53,6 +53,7 @@ class job {
     required this.companyName,
     required this.platform,
     required this.description,
+    required this.location,
   });
 
   final int? id;
@@ -61,6 +62,7 @@ class job {
   final String link;
   final Platform platform;
   final String description;
+  final String location;
 
   factory job.fromMap(Map<String, dynamic> map) {
     return job(
@@ -70,6 +72,7 @@ class job {
       companyName: map['company_name'],
       platform: Platform.values.firstWhere((e) => e.name == map['platform']),
       description: map['description'],
+      location: map['location'],
     );
   }
 }

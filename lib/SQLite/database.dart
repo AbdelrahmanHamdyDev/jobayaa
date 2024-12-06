@@ -37,7 +37,8 @@ class SqlLiteDB {
         "link" TEXT NOT NULL,
         "company_name" TEXT NOT NULL,
         "platform" TEXT NOT NULL,
-        "description" TEXT
+        "description" TEXT,
+        "location" TEXT
       )
     ''');
 
@@ -64,6 +65,7 @@ class SqlLiteDB {
         'company_name': Job.companyName,
         'platform': Job.platform.name,
         'description': Job.description,
+        'location': Job.location,
       },
     );
     await _updateJobStream();
@@ -80,6 +82,7 @@ class SqlLiteDB {
         'company_name': Job.companyName,
         'platform': Job.platform.name,
         'description': Job.description,
+        'location': Job.location,
       },
       where: 'id = ?',
       whereArgs: [Job.id],

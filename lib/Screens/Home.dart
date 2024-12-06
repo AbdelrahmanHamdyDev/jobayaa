@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:jobayaa/SQLite/database.dart';
-import 'package:jobayaa/Screens/Add.dart';
 import 'package:jobayaa/Screens/Info.dart';
 import 'package:jobayaa/Widgets/grid_items.dart';
 import 'package:jobayaa/Models/jobaya.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:jobayaa/Widgets/user_input.dart';
 
 final SqlLiteDB sqlDb = SqlLiteDB();
 
@@ -35,7 +35,7 @@ class _jobayaaHomeState extends State<jobayaaHome> {
         onPressed: () {
           showModalBottomSheet(
             context: context,
-            builder: (ctx) => newJobaya(),
+            builder: (ctx) => const jobayaaInput(),
             shape: const RoundedRectangleBorder(
               borderRadius: BorderRadius.vertical(
                 top: Radius.circular(20),

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:jobayaa/Models/jobaya.dart';
 
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:jobayaa/Screens/Edit.dart';
+import 'package:jobayaa/Widgets/user_input.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class jobayaaInfo extends StatelessWidget {
@@ -19,7 +19,7 @@ class jobayaaInfo extends StatelessWidget {
             onPressed: () {
               Navigator.of(context).pushReplacement(
                 MaterialPageRoute(
-                  builder: (ctx) => editJobayaa(jobaya: jobaya),
+                  builder: (ctx) => jobayaaInput(jobaya: jobaya),
                 ),
               );
             },
@@ -47,6 +47,12 @@ class jobayaaInfo extends StatelessWidget {
                     fontSize: 20.sp,
                   ),
                 ),
+                Text(
+                  jobaya.location,
+                  style: TextStyle(
+                    fontSize: 14.sp,
+                  ),
+                ),
                 SizedBox(height: 10.h),
                 const Divider(),
                 SizedBox(height: 10.h),
@@ -55,8 +61,8 @@ class jobayaaInfo extends StatelessWidget {
                     ClipRRect(
                       borderRadius: BorderRadius.circular(20),
                       child: SizedBox(
-                        width: 20.sp,
-                        height: 20.sp,
+                        width: 25.sp,
+                        height: 25.sp,
                         child: Image.network(
                           platformIcons[jobaya.platform].toString(),
                           fit: BoxFit.fill,
@@ -80,12 +86,12 @@ class jobayaaInfo extends StatelessWidget {
                         }
                       },
                       child: SizedBox(
-                        width: MediaQuery.of(context).size.width / 1.3,
+                        width: MediaQuery.of(context).size.width / 1.5,
                         child: Text(
                           jobaya.link,
                           style: TextStyle(
                             color: Colors.blue,
-                            fontSize: 10.sp,
+                            fontSize: 15.sp,
                           ),
                           maxLines: 1,
                           overflow: TextOverflow.ellipsis,
